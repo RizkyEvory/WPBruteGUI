@@ -1,121 +1,185 @@
 ```markdown
-<!-- markdownlint-disable MD033 -->
-<p align="center">
-  <img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&height=200&section=header&text=WPBruteGUI&fontSize=60&fontColor=fff&animation=fadeIn" width="100%"/>
-</p>
+# WPBruteGUI v1.2  
+Modern & Colourful WordPress Bruteforce Tool  
+GUI + CLI • Real-Time Success Counter • Optional Shell Upload
 
-<p align="center">
-  <a href="https://github.com/RizkyEvory/WPBruteGUI/releases/latest"><img src="https://img.shields.io/github/v/release/RizkyEvory/WPBruteGUI?style=flat-square&labelColor=1e1e2f&color=7b68ee&logo=github&label=Latest"/></a>
-  <a href="https://github.com/RizkyEvory/WPBruteGUI/stargazers"><img src="https://img.shields.io/github/stars/RizkyEvory/WPBruteGUI?style=flat-square&labelColor=1e1e2f&color=ff69b4&logo=star"/></a>
-  <a href="https://github.com/RizkyEvory/WPBruteGUI/issues"><img src="https://img.shields.io/github/issues-raw/RizkyEvory/WPBruteGUI?style=flat-square&labelColor=1e1e2f&color=00e054&logo=github"/></a>
-  <a href="#"><img src="https://img.shields.io/badge/Platform-Win%20%7C%20Linux%20%7C%20macOS%20%7C%20Termux-blue?style=flat-square&labelColor=1e1e2f"/></a>
-</p>
-
-<p align="center">
-  <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&size=18&pause=1000&color=7b68ee&center=true&vCenter=true&width=600&lines=Dark+GUI+for+WordPress+Bruteforce%2C+XMLRPC+%26+wp-login" />
-</p>
+> Coded by **M4DI~UciH4**  
+> [GitHub](https://github.com/RizkyEvory) • [Telegram](https://t.me/madiganzz)
 
 ---
 
-## 🔥 Highlights
-| | |
-|---|---|
-| **🎨 Modern GUI** | Dark Tkinter theme with live counter & progress-bar |
-| **⚡ Dual Engine** | Attacks `xmlrpc.php` **and** `/wp-login.php` |
-| **🎯 Smart Wordlist** | Placeholders like `[DOMAIN]`, `[YEAR]`, `[UPPERLOGIN]` |
-| **📦 Shell Upload** | Auto-upload plugin / theme ZIP after valid login |
-| **📱 Termux Ready** | Zero DLL, pure Python, run on Android |
+## 📸 Preview
+Dark-themed, resizable GUI with live **Success Counter** and animated progress-bar.  
+(Upload your own `icon.ico` / `icon.png` to `assets/` to customize branding.)
 
 ---
 
-## 🚀 30-Second Install
+## ✨ Features
+| Feature | Description |
+|---------|-------------|
+| **Dual Mode** | Full **GUI** (Tkinter) + optional **CLI** (`--cli`) |
+| **Attack Vectors** | `xmlrpc.php` **and** `/wp-login.php` |
+| **Realtime Counter** | `[SUCCESS #N]` in CLI & live label in GUI |
+| **Dynamic Wordlist** | Placeholders: `[DOMAIN]`, `[YEAR]`, `[WPLOGIN]`, etc. |
+| **Shell Upload** | Auto-upload plugin / theme ZIP after valid login |
+| **Cross-Platform** | Windows, Linux, macOS, **Termux** |
+| **SSL Bypass** | Works with self-signed / expired certificates |
+
+---
+
+## 🚀 Quick Start
+
+### 1. Clone
 ```bash
 git clone https://github.com/RizkyEvory/WPBruteGUI.git
 cd WPBruteGUI
-pip install -r requirements.txt
-python main.py        # GUI
-python main.py --cli  # CLI
 ```
 
----
-
-🖥️ GUI Preview
-
----
-
-🛠️ Usage Flow
-
-1. Target list (`targets.txt`)  
-   
-```
-   http://victim1.com
-   https://site2.org
-   ```
-
-2. Password list (`passwords.txt`)  
-   
-```
-   123456
-   [DOMAIN]2024
-   [WPLOGIN]123!
-   ```
-
-3. Shell ZIPs (optional)  
-   - `plugin.zip`  
-   - `theme.zip`
-
-4. Run  
-   - GUI → click 🚀 Start Bruteforce  
-   - CLI → `python main.py --cli`
-
----
-
-📱 Termux
+2. Install Dependencies
 
 ```bash
-pkg update && pkg install python git -y
+pip install -r requirements.txt
+```
+
+3. Launch
+
+Mode	Command	
+GUI	`python main.py`	
+CLI	`python main.py --cli`	
+
+---
+
+📋 Requirements
+
+```
+httpx
+colorama
+pillow   # for icons / PNG support
+```
+
+---
+
+📁 File Structure
+
+```
+WPBruteGUI/
+├── main.py                 # Main script (GUI + CLI)
+├── assets/
+│   ├── icon.ico            # Windows icon
+│   └── icon.png            # Linux / macOS icon
+├── requirements.txt
+├── README.md
+├── example/
+│   ├── targets.txt         # sample target list
+│   └── passwords.txt       # sample password list
+├── success.txt             # found credentials (auto-created)
+├── plugins.txt             # uploaded plugin shells (auto-created)
+├── themes.txt              # uploaded theme shells (auto-created)
+```
+
+---
+
+🎯 Usage Guide
+
+1. Prepare Lists
+targets.txt
+
+```
+http://target1.com
+https://target2.net
+```
+
+passwords.txt
+
+```
+123456
+[DOMAIN]2024
+[WPLOGIN]123
+```
+
+2. GUI Flow
+1. Target list → select `.txt`  
+2. Password list → select `.txt`  
+3. Plugin / Theme ZIP (optional) → pick your shell ZIPs  
+4. Click 🚀 Start Bruteforce  
+5. Watch Success Counter and Log update live.
+
+3. CLI Flow
+
+```bash
+python main.py --cli
+# Follow interactive prompts
+```
+
+---
+
+🔐 Dynamic Wordlist Placeholders
+
+Placeholder	Replaced With	
+`[WPLOGIN]`	username	
+`[DOMAIN]`	first part of domain	
+`[DDOMAIN]`	full domain	
+`[YEAR]`	current year	
+`[UPPERLOGIN]`	username.upper()	
+`[REVERSE]`	username reversed	
+… (full list in source)	
+
+---
+
+📱 Termux Guide
+No DLL required – runs natively.
+
+```bash
+pkg update && pkg upgrade
+pkg install python git
 git clone https://github.com/RizkyEvory/WPBruteGUI.git
-cd WPBruteGUI && pip install httpx colorama
+cd WPBruteGUI
+pip install httpx colorama
 python main.py --cli
 ```
 
-> For GUI on Termux install `x11-repo` & VNC.
+> GUI on Termux: install X11-repo & VNC if you want the GUI.
 
 ---
 
-📊 Real-time Stats
+🧪 Example Session
 
-Output	File	
-Found credentials	`success.txt`	
-Plugin shells	`plugins.txt`	
-Theme shells	`themes.txt`	
+```
+[SUCCESS #1] http://victim.com -> admin:admin123
+[UPLOAD SUCCESS] Plugin: http://victim.com/wp-content/plugins/abcd1234/gepas.php
+```
 
----
-
-🎨 Color Palette
-
-Hex	Usage	
-`#1e1e2f`	background	
-`#7b68ee`	accent / buttons	
-`#c7c7ff`	text	
+All results appended to `success.txt`, `plugins.txt`, `themes.txt`.
 
 ---
 
-🛡️ Legal
-Use only on systems you own or have written permission to test.
+⚠️ Legal Notice
+Use only on systems you own or have explicit authorization to test.
 
-Developer not responsible for misuse.
+Developer (RizkyEvory / M4DIUciH4) not responsible for misuse.
 
 ---
 
-🤝 Contributing
-1. Fork  
-2. `git checkout -b feature-name`  
-3. Pull Request
+🛠️ Contributing
+1. Fork this repo  
+2. Create feature branch: `git checkout -b feature-name`  
+3. Push & open Pull Request
+
+---
+
+🐛 Issues & Requests
+Open an [Issue](https://github.com/RizkyEvory/WPBruteGUI/issues) or contact via [Telegram](https://t.me/madiganz).
 
 ---
 
 📜 License
-MIT ‑ see [LICENSE](LICENSE)
+MIT – see [LICENSE](LICENSE).
 
 ---
+
+⬇️ Download
+Latest release:
+
+👉 [https://github.com/RizkyEvory/WPBruteGUI/releases](https://github.com/RizkyEvory/WPBruteGUI/releases)
+
+```
