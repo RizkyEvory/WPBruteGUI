@@ -1,3 +1,4 @@
+![1754852479100](https://github.com/user-attachments/assets/77bd6e9d-7a7c-4e7a-b03c-7b0c9ad4a2be)
 ```markdown
 # WPBruteGUI v1.2  
 Modern & Colourful WordPress Bruteforce Tool  
