@@ -1,0 +1,13 @@
+# Core HTTP client (async)
+httpx>=0.27.0
+
+# Terminal colours (CLI mode)
+colorama>=0.4.6
+
+# Image handling for custom icons (GUI mode)
+Pillow>=10.3.0
+
+# (Optional) Tkinter is bundled with standard CPython on Windows/macOS.
+# On minimal Linux distros or Termux install:
+#   sudo apt install python3-tk
+#   pkg install python-tkinter   # Termux
