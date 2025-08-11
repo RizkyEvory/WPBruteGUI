@@ -1,6 +1,6 @@
-![1754852723001](https://github.com/user-attachments/assets/acdc48cc-5803-4e5b-9265-6a4d9d349c1d)
 ![1754852479100](https://github.com/user-attachments/assets/77bd6e9d-7a7c-4e7a-b03c-7b0c9ad4a2be)
 ```markdown
+### Added v2.py
 # WPBruteGUI v1.2  
 Modern & Colourful WordPress Bruteforce Tool  
 GUI + CLI • Real-Time Success Counter • Optional Shell Upload
