@@ -64,7 +64,7 @@ banner_cli = rf"""{Fore.GREEN}{Style.BRIGHT}
 ║        WordPress Bruteforce & Auto-Shell Uploader                ║
 ║                                                                  ║
 ║              Coded by  M4DI~UciH4                        ║
-║           t.me/madiganz  |  github.com/rizkyevory             ║
+║           t.me/madiganzz  |  github.com/RizkyEvory             ║
 ║                                                                  ║
 ╚══════════════════════════════════════════════════════════════════╝
 
